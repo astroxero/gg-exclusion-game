@@ -14,6 +14,7 @@ public class GunScript : MonoBehaviour
     public float impactForce = 30f;
     public float gubbyNumber = 0f;
     public TextMeshProUGUI ammoDisplay;
+    public TextMeshProUGUI ReloadText;
 
     public Camera fpsCam;
 
@@ -44,7 +45,11 @@ public class GunScript : MonoBehaviour
         ammoDisplay.text = currentAmmo.ToString();
         if (currentAmmo == 0)
         {
-            ammoDisplay.text = "Reloading";
+            ammoDisplay.text = null;
+            ReloadText.text = "Reloading";
+        } else
+        {
+            ReloadText.text = null;
         }
         if (isReloading)
         {

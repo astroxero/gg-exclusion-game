@@ -11,6 +11,7 @@ public class GrenadeThrower : MonoBehaviour
     public float throwStopTime = 10f; 
     public float maxThrowStopTime = 10f;
     public TextMeshProUGUI countdownTimer;
+    public TextMeshProUGUI grenadeButtonText;
 
     void ThrowGrenade()
     {
@@ -31,7 +32,11 @@ public class GrenadeThrower : MonoBehaviour
         countdownTimer.text = throwStopTime.ToString("0");
         if (throwStopTime == 0)
         {
-            countdownTimer.text = " Press E";
+            countdownTimer.text = null;
+            grenadeButtonText.text = "E";
+        } else 
+        {
+            grenadeButtonText.text = null;
         }
 
         if (throwStopTime > 0)

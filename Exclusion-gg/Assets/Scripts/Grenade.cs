@@ -44,9 +44,14 @@ public class Grenade : MonoBehaviour
                 rb.AddExplosionForce(force, transform.position, radius);
             }
             Target targ = nearbyObject.GetComponent<Target>();
+            TargetPlayer targP = nearbyObject.GetComponent<TargetPlayer>();
             if (targ != null)
             {
                 targ.takeDamage(damageTooken);
+            } 
+            if (targP != null)
+            {
+                targP.takeDamage(damageTooken);
             }
         }
         

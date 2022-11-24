@@ -24,6 +24,7 @@ public class TargetPlayer : MonoBehaviour
 
     void Die()
     {
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("DeathScene");
     }
 }
